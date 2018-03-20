@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+{% for row in rows %}
+    <dl class="row">
+        <dt>ID</dt>
+        <dd>{{row["id"]}}</dd>
+        <dt>Category</dt>
+        <dd>{% if row.category %}{{row.category}}{% else %}n/a{% endif %}</dd>
+        <dt>SubCategory</dt>
+        <dd>{% if row.subcategory %}{{row.subcategory}}{% else %}n/a{% endif %}</dd>
+        <dt>Room</dt>
+        <dd>{% if row.room %}{{row.room}}{% else %}n/a{% endif %}</dd>
+        <dt>When Purchased</dt>
+        <dd>{% if row.whenpurchased %}{{row.whenpurchased}}{% else %}n/a{% endif %}</dd>
+        <dt>Where Purchased</dt>
+        <dd>{% if row.wherepurchased %}{{row.wherepurchased}}{% else %}n/a{% endif %}</dd>
+        <dt>General Color</dt>
+        <dd>{% if row.generalcolor %}{{row.generalcolor}}{% else %}n/a{% endif %}</dd>
+        <dt>Brand</dt>
+        <dd>{% if row.brand %}{{row.brand}}{% else %}n/a{% endif %}</dd>
+        <dt>Description</dt>
+        <dd>{% if row.description %}{{row.description}}{% else %}n/a{% endif %}</dd>
+        <dt>Finish</dt>
+        <dd>{% if row.finish %}{{row.finish}}{% else %}n/a{% endif %}</dd>
+        <dt>Code</dt>
+        <dd>{% if row.code %}{{row.code}}{% else %}n/a{% endif %}</dd>
+        <dt>Photo 1</dt>
+        <dd>{% if row.pic1 %}<a href='{{row.pic1}}'>Pic 1</a>{% else %}No Photo{% endif %}</dd>
+        <dt>Photo 2</dt>
+        <dd>{% if row.pic2 %}<a href='{{row.pic2}}'>Pic 2</a>{% else %}No Photo{% endif %}</dd>
+        <dt>URL</dt>
+        <dd>{% if row.url %}<a href='{{row.url}}'>Product URL</a>{% else %}No URL{% endif %}</dd>
+    </dl>
+{% endfor %}
+{% endblock %}

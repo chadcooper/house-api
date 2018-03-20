@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="full-center">
+    {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+      <dl>
+        <dt>Room:
+        <dd><input type="text" size="30" name="room">
+          <dt>Category:</dt>
+          <dd><input type="text" size="30" name="cat"></dd>
+        <dd><input type="submit" value="Share">
+      </dl>
+    </form>
+  {% endif %}
+    <table border = 1>
+         <thead>
+            <td>Category</td>
+         </thead>
+         {% for row in rows %}
+            <tr>
+                <td><a href="http://localhost:5000/house/items/categories/{{row.category.lower()}}">{{row["category"]}}</a></td>
+            </tr>
+         {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+<table border = 1>
+         <thead>
+            <td>ID</td>
+            <td>Category</td>
+            <td>SubCategory</td>
+            <td>Room</td>
+            <td>When Purchased</td>
+            <td>Where Purchased</td>
+            <td>General Color</td>
+            <td>Brand</td>
+            <td>Description</td>
+            <td>Finish</td>
+            <td>Code</td>
+            <td>Photo 1</td>
+            <td>Photo 2</td>
+            <td>URL</td>
+         </thead>
+         {% for row in rows %}
+            <tr>
+               <td>{{row["id"]}}</td>
+               <td>{{row["category"]}}</td>
+               <td> {{ row["subcategory"]}}</td>
+               <td>{{row["room"]}}</td>
+                <td>{{row["whenpurchased"]}}</td>
+                <td>{{row["wherepurchased"]}}</td>
+                <td>{{row["generalcolor"]}}</td>
+                <td>{{row["brand"]}}</td>
+                <td>{{row["description"]}}</td>
+                <td>{{row["finish"]}}</td>
+                <td>{{row["code"]}}</td>
+                <td>{% if row.pic1 %}<a href='{{row.pic1}}'>Pic 1</a>{% else %}No Photo{% endif %} </td>
+                <td>{% if row.pic2 %}<a href='{{row.pic2}}'>Pic 2</a>{% else %}No Photo{% endif %} </td>
+                <td>{% if row.url %}<a href='{{row.url}}'>Product URL</a>{% else %} {% endif %} </td>
+            </tr>
+         {% endfor %}
+      </table>
+{% endblock %}
