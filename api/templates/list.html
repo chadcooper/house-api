@@ -5,34 +5,8 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <dl class="row">
-                <dt class="col-sm-6">ID</dt>
-                <dd class="col-sm-6">{{row["id"]}}</dd>
-                <dt class="col-sm-6">Category</dt>
-                <dd class="col-sm-6">{% if row.category %}{{row.category}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">SubCategory</dt>
-                <dd class="col-sm-6">{% if row.subcategory %}{{row.subcategory}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Room</dt>
-                <dd class="col-sm-6">{% if row.room %}{{row.room}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">When Purchased</dt>
-                <dd class="col-sm-6">{% if row.whenpurchased %}{{row.whenpurchased}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Where Purchased</dt>
-                <dd class="col-sm-6">{% if row.wherepurchased %}{{row.wherepurchased}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">General Color</dt>
-                <dd class="col-sm-6">{% if row.generalcolor %}{{row.generalcolor}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Brand</dt>
-                <dd class="col-sm-6">{% if row.brand %}{{row.brand}}{% else %}n/a{% endif %}</dd>
                 <dt class="col-sm-6">Description</dt>
-                <dd class="col-sm-6">{% if row.description %}{{row.description}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Finish</dt>
-                <dd class="col-sm-6">{% if row.finish %}{{row.finish}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Code</dt>
-                <dd class="col-sm-6">{% if row.code %}{{row.code}}{% else %}n/a{% endif %}</dd>
-                <dt class="col-sm-6">Photo 1</dt>
-                <dd class="col-sm-6">{% if row.pic1 %}<a href='{{row.pic1}}'>Pic 1</a>{% else %}No Photo{% endif %}</dd>
-                <dt class="col-sm-6">Photo 2</dt>
-                <dd class="col-sm-6">{% if row.pic2 %}<a href='{{row.pic2}}'>Pic 2</a>{% else %}No Photo{% endif %}</dd>
-                <dt class="col-sm-6">URL</dt>
-                <dd class="col-sm-6">{% if row.url %}<a href='{{row.url}}'>Product URL</a>{% else %}No URL{% endif %}</dd>
+                <dd class="col-sm-6">{% if row.description %}<a href="{{ url_for('get_item', item_id=row.id) }}">{{row.description}}</a>{% else %}n/a{% endif %}</dd>
             </dl>
         </div>
         <div class="col-md-4"></div>

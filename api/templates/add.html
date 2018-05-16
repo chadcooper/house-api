@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="full-center">
+    {% if session.logged_in %}
+    <div class="col-md-4">
+    <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+      <dl>
+          <dt>Description:</dt>
+              <dd><textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea></dd>
+          <dt>Room:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="room"></dd>
+          <dt>Category:</dt>
+              <dd>
+                  <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1" name="cat">
+                      {% for header_row in header_rows %}
+                          <option>{{header_row["category"]}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+              </dd>
+          <dt>Sub-Category:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="sub-cat"></dd>
+          <dt>Date Purchased:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="date-purchased"></dd>
+          <dt>Where Purchased:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="where-purchased"></dd>
+          <dt>General Color:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="color"></dd>
+          <dt>Brand:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="brand"></dd>
+          <dt>Finish:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="finish"></dd>
+          <dt>Code:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="code"></dd>
+          <dt>Photo 1:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="photo-1"></dd>
+          <dt>Photo 2:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="photo-2"></dd>
+          <dt>URL:</dt>
+              <dd><input  class="form-control" type="text" size="30" name="url"></dd>
+          <dd><input type="submit" value="Add Item"></dd>
+      </dl>
+    </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
